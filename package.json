@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docker-dev": "docker-compose build server && docker-compose run --service-ports server",
+    "docker-test": "docker-compose -f docker-compose-test.yml build test && docker-compose -f docker-compose-test.yml",
+    "test": "jest test"
   },
   "author": "",
   "license": "ISC",

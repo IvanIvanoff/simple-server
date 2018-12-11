@@ -1,18 +1,18 @@
 FROM node:10.11-alpine AS builder
 
-RUN apk update && apk --no-cache add \
-  bash \
-  g++ \
-  ca-certificates \
-  lz4-dev \
-  musl-dev \
-  cyrus-sasl-dev \
-  openssl-dev \
-  make \
-  python \
-  git
+# RUN apk update && apk --no-cache add \
+#   bash \
+#   g++ \
+#   ca-certificates \
+#   lz4-dev \
+#   musl-dev \
+#   cyrus-sasl-dev \
+#   openssl-dev \
+#   make \
+#   python \
+#   git
 
-RUN apk add --no-cache --virtual .build-deps gcc zlib-dev libc-dev bsd-compat-headers py-setuptools bash
+# RUN apk add --no-cache --virtual .build-deps gcc zlib-dev libc-dev bsd-compat-headers py-setuptools bash
 
 WORKDIR /app
 
