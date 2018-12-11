@@ -1,4 +1,4 @@
-podTemplate(label: 'simple-service-builder', containers: [
+podTemplate(label: 'simple-server-builder', containers: [
   containerTemplate(
     name: 'docker-compose',
     image: 'docker/compose:1.22.0',
@@ -8,13 +8,13 @@ podTemplate(label: 'simple-service-builder', containers: [
       envVar(key: 'DOCKER_HOST', value: 'tcp://docker-host-docker-host:2375')
     ])
 ]) {
-  node('simple-service-builder') {
+  node('simple-server-builder') {
 
     def scmVars = checkout scm
 
     container('docker-compose') {
       stage('Build') {
-        sh "docker build --target builder -t localhost/simple-service-builder:${scmVars.GIT_COMMIT} ."
+        sh "docker build --target builder -t localhost/simple-server-builder:${scmVars.GIT_COMMIT} ."
       }
 
       stage('Test') {
@@ -37,10 +37,10 @@ podTemplate(label: 'simple-service-builder', containers: [
             def awsRegistry = "${env.aws_account_id}.dkr.ecr.eu-central-1.amazonaws.com"
             docker.withRegistry("https://${awsRegistry}", "ecr:eu-central-1:ecr-credentials") {
               sh "docker build \
-                -t ${awsRegistry}/simple-service:${env.BRANCH_NAME} \
-                -t ${awsRegistry}/simple-service:${scmVars.GIT_COMMIT} ."
-              sh "docker push ${awsRegistry}/simple-service:${env.BRANCH_NAME}"
-              sh "docker push ${awsRegistry}/simple-service:${scmVars.GIT_COMMIT}"
+                -t ${awsRegistry}/simple-server:${env.BRANCH_NAME} \
+                -t ${awsRegistry}/simple-server:${scmVars.GIT_COMMIT} ."
+              sh "docker push ${awsRegistry}/simple-server:${env.BRANCH_NAME}"
+              sh "docker push ${awsRegistry}/simple-server:${scmVars.GIT_COMMIT}"
             }
           }
         }
