@@ -63,13 +63,13 @@ We're going to follow the development and deployment of a javascript service whi
 
 The steps that are done and the code that is written following roughly this order:
 
-1) Service that is deployed: https://github.com/santiment/simple-server
-2) Dockerfile: https://github.com/santiment/simple-server/blob/master/Dockerfile
-3) Docker-compose: https://github.com/santiment/simple-server/blob/master/docker-compose.yml
-4) Jenkinsfile: https://github.com/santiment/simple-server/blob/master/Jenkinsfile
-5) k8s deployment: https://github.com/santiment/devops/pull/553/files
-6) Jenkins job: https://github.com/santiment/simple-server/blob/master/Jenkins-job.groovy
-7) npm run <docker-dev/docker-test> to run locally: https://github.com/santiment/simple-server/blob/master/package.json#L8-L9
+1) Service that is deployed: https://github.com/ivanivanoff/simple-server
+2) Dockerfile: https://github.com/ivanivanoff/simple-server/blob/master/Dockerfile
+3) Docker-compose: https://github.com/ivanivanoff/simple-server/blob/master/docker-compose.yml
+4) Jenkinsfile: https://github.com/ivanivanoff/simple-server/blob/master/Jenkinsfile
+5) k8s deployment: https://github.com/ivanivanoff/devops/pull/553/files
+6) Jenkins job: https://github.com/ivanivanoff/simple-server/blob/master/Jenkins-job.groovy
+7) npm run <docker-dev/docker-test> to run locally: https://github.com/ivanivanoff/simple-server/blob/master/package.json#L8-L9
 
 ## 1) Service that is deployed
 The service that will be deployed needs to be hosted on github under the `santiment` organization. There are no restrictions on language/framework used.
