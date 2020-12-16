@@ -67,7 +67,7 @@ The steps that are done and the code that is written following roughly this orde
 2) Dockerfile: https://github.com/ivanivanoff/simple-server/blob/master/Dockerfile
 3) Docker-compose: https://github.com/ivanivanoff/simple-server/blob/master/docker-compose.yml
 4) Jenkinsfile: https://github.com/ivanivanoff/simple-server/blob/master/Jenkinsfile
-5) k8s deployment: https://github.com/ivanivanoff/devops/pull/553/files
+5) k8s deployment: https://github.com/ivanivanoff/simple-server/blob/master/deployment.yaml
 6) Jenkins job: https://github.com/ivanivanoff/simple-server/blob/master/Jenkins-job.groovy
 7) npm run <docker-dev/docker-test> to run locally: https://github.com/ivanivanoff/simple-server/blob/master/package.json#L8-L9
 
