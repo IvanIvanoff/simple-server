@@ -1,0 +1,31 @@
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: simple-server
+  labels:
+    app: simple-server
+    branch: master
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-server
+      branch: master
+  template:
+    metadata:
+      labels:
+        app: simple-server
+        branch: master
+    spec:
+      containers:
+        - name: simple-server
+          image: 913750763724.dkr.ecr.eu-central-1.amazonaws.com/simple-server:master
+
+          resources:
+            requests:
+              memory: 100Mi
+              cpu: 100m
+            limits:
+              memory: 100Mi
+              cpu: 100m
