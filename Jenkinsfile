@@ -5,7 +5,7 @@ podTemplate(label: 'simple-server-builder', containers: [
     ttyEnabled: true,
     command: 'cat',
     envVars: [
-      containerEnvVar(key: 'DOCKER_HOST', value: 'tcp://docker-host-docker-host:2375')
+      envVar(key: 'DOCKER_HOST', value: 'tcp://docker-host-docker-host:2375')
     ])
 ]) {
   node('simple-server-builder') {
