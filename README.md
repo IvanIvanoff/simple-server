@@ -75,10 +75,10 @@ The steps that are done and the code that is written following roughly this orde
 The service that will be deployed needs to be hosted on github under the `santiment` organization. There are no restrictions on language/framework used.
 
 ## 2) Dockerfile
-The dockerfile explains the steps that needed to be performed in order to build an image from the source code. Please check the [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) and the `Dockerfile`s in any of our repos.
+The dockerfile explains the steps that need to be performed in order to build an image from the source code. Please check the [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) and the `Dockerfile`s in any of our repos.
 
 ## 3) Docker-compose
-Having a docker-compose file is optional, but useful. It allow us to build the dockerfile and start it alongside its dependencies easily. For example, if you are building an exporter that needs zookeeper and kafka, the process of building and starting the exporter will be simply executing `docker-compose build exporter && docker-compose run exporter` if you have the correct `docker-compose.yaml` file.
+Having a docker-compose file is optional, but useful. It allows us to build the dockerfile and start it alongside its dependencies easily. For example, if you are building an exporter that needs zookeeper and kafka, the process of building and starting the exporter will be simply executing `docker-compose build exporter && docker-compose run exporter` if you have the correct `docker-compose.yaml` file.
 For example, if you want to start kafka and zookeeper in your tests you can have [docker-compose-test.yml](https://github.com/santiment/github-exporter/blob/master/docker-compose-test.yml) file and just run `docker-compose -f docker-compose-test.yml build && docker-compose -f docker-compose-test.yml run test`
 
 ## 4) Jenkinsfile
